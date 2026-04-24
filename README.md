@@ -3,7 +3,7 @@
 Personal portfolio website of **Puli Vasanth Kumar** — MSc Digital Engineering student at Bauhaus-Universität Weimar, Germany.
 
 ## 🔗 Live Site
-https://vasanth-puli.github.io/Puli-Portfolio-
+https://vasanth-puli.github.io/Puli-Portfolio/
 
 ## 👨‍💻 About Me
 I'm a Computer Science graduate currently pursuing my Masters in Digital Engineering.
