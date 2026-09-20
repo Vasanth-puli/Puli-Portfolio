@@ -463,7 +463,17 @@
                 <h2 class="section-title center animate-on-scroll">LET'S CONNECT</h2>
 
                 <div class="contact-wrapper">
-                    <form id="contact-form" class="contact-form animate-on-scroll">
+                    <!-- Web3Forms delivers the message to your inbox. GitHub Pages serves
+                         static files only, so a form with no backend has nowhere to post to.
+                         Replace YOUR_ACCESS_KEY_HERE with the key from web3forms.com. -->
+                    <form id="contact-form" class="contact-form animate-on-scroll"
+                          action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="subject" value="New message from your portfolio">
+                        <input type="hidden" name="from_name" value="Puli Vasanth Kumar Portfolio">
+                        <!-- Honeypot: real people never see this, bots fill it in. -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none"
+                               tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="John Doe" required>
@@ -479,6 +489,7 @@
                         </div>
                         <button type="submit" class="submit-btn">Send Message <i
                                 class="ph ph-paper-plane-right"></i></button>
+                        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
                     </form>
 
                     <div class="social-links animate-on-scroll delay-1">
