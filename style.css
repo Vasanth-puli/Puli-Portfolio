@@ -730,15 +730,30 @@ footer {
 }
 
 /* Animations */
+/* Content is visible by default. It is only hidden for the reveal animation when
+   JS is confirmed running (see the inline script in <head>), so a failure of the
+   observer, a blocked script or an anchor jump can never leave a section blank. */
 .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.animate-on-scroll.visible {
+html.js .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+html.js .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Respect a reader who has asked for less motion: show everything at once. */
+@media (prefers-reduced-motion: reduce) {
+    html.js .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 .delay-1 {
