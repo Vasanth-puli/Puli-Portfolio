@@ -577,15 +577,20 @@ a:hover {
     justify-content: center;
     gap: 2rem;
     margin-top: 3rem;
+    /* Caps the row at three cards so six sit as a balanced 3 + 3 rather than
+       an accidental-looking 4 + 2. */
+    max-width: 790px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hobby-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 2rem;
-    width: 150px;
+    gap: 0.75rem;
+    padding: 2rem 1.5rem;
+    width: 230px;
     background: var(--bg-color);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -603,9 +608,24 @@ a:hover {
 }
 
 .hobby-item span {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     text-align: center;
+}
+
+.hobby-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hobby-item {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 /* Contact Section */
