@@ -90,3 +90,62 @@ try {
     // Any failure at all: un-hide everything and let the page render plainly.
     document.documentElement.classList.remove('js');
 }
+
+// Contact form
+//
+// GitHub Pages serves static files, so there is no server here to receive a post.
+// The form is delivered by Web3Forms instead. Submitting via fetch keeps the
+// visitor on the page and lets us show them what happened, rather than bouncing
+// them to a confirmation screen on someone else's domain.
+(function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const status = document.getElementById('form-status');
+    const button = form.querySelector('.submit-btn');
+    const keyField = form.querySelector('input[name="access_key"]');
+
+    function say(text, kind) {
+        if (!status) return;
+        status.textContent = text;
+        status.className = 'form-status' + (kind ? ' ' + kind : '');
+    }
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        // Fail loudly rather than silently swallowing someone's message.
+        if (!keyField || !keyField.value || keyField.value === 'YOUR_ACCESS_KEY_HERE') {
+            say('This form is not connected yet. Please email me directly at ' +
+                'vasanthpuli413@gmail.com.', 'error');
+            return;
+        }
+
+        const original = button ? button.innerHTML : '';
+        if (button) { button.disabled = true; }
+        say('Sending…', 'sending');
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+            });
+            const result = await response.json().catch(() => ({}));
+
+            if (response.ok && result.success) {
+                form.reset();
+                say('Thanks — your message has been sent. I will get back to you soon.', 'ok');
+            } else {
+                say((result && result.message) ||
+                    'Something went wrong sending that. Please email me directly at ' +
+                    'vasanthpuli413@gmail.com.', 'error');
+            }
+        } catch (err) {
+            say('Could not reach the mail service. Please email me directly at ' +
+                'vasanthpuli413@gmail.com.', 'error');
+        } finally {
+            if (button) { button.disabled = false; button.innerHTML = original; }
+        }
+    });
+})();
