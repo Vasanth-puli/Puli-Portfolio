@@ -890,3 +890,14 @@ html.js .animate-on-scroll.visible {
 #work-with-me .education-card h3 {
     margin-bottom: 0.75rem;
 }
+
+.project-video {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 1080 / 866;
+    margin: 0 0 1.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0f2a47;
+}
