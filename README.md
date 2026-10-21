@@ -1,33 +1,26 @@
 # Puli-Portfolio
 
-Personal portfolio website of **Puli Vasanth Kumar** — MSc Digital Engineering student at Bauhaus-Universität Weimar, Germany.
+Personal portfolio website of **Puli Vasanth Kumar**, MSc Digital Engineering student at Bauhaus-Universität Weimar, Germany, building AI tools for manufacturing workflows.
 
-## 🔗 Live Site
+## 🔗 Live site
 https://vasanth-puli.github.io/Puli-Portfolio/
 
-## 👨‍💻 About Me
-I'm a Computer Science graduate currently pursuing my Masters in Digital Engineering.
-Passionate about Cloud Computing, Cybersecurity, Machine Learning, and building
-intelligent digital solutions.
+## 👨‍💻 About
+I build data pipelines in PySpark and Databricks, simulation software in MATLAB and Simulink, and LLM-based tools for manufacturing. My current focus is **Anfrage-Check**, an AI pre-check that turns technical customer inquiries (RFQs) into review-ready quotation data for CNC shops.
 
-## 🛠️ Built With
-- HTML5
-- CSS3
-- JavaScript
+## 🚀 Projects featured on the site
+- **Anfrage-Check** — AI RFQ pre-check for CNC shops *(2026, in progress)*
+- **Paint-Shop Quality Data Pipeline** — PySpark bronze/silver/gold pipeline with measured data-quality gates
+- **Longitudinal Motion Control for a BEV** — traction control and regenerative braking in MATLAB/Simulink
+- **Structural Optimisation & Surrogate Modelling** — SIMP topology optimisation on a hand-written FE solver
+- **End-to-End Real Estate Price Predictor** — Streamlit ML app
+- **Web Scraping with NLTK** and **Brain Tumour Classification (ResNet-50)** *(2023)*
 
-## 💼 Experience
-- **Data Analyst & Process Automation** — Alteryx *(2023)*
-- **AWS Cloud Foundation** — Amazon Web Services *(2022)*
-- **Cisco Networking Engineer** — Cisco *(2021–2022)*
-- **Cybersecurity** — Palo Alto *(2021)*
+## 🤝 Open to project inquiries
+AI workflow automation, data pipelines and dashboards, and digitalisation projects for manufacturing companies and SMEs.
 
-## 🚀 Projects
-- **Brain Tumour Classification** — Multi-class classification using ResNet-50
-- **Fake News Detection** — ML-based detection using NLP techniques
-
-## 🎓 Education
-- MSc Digital Engineering — Bauhaus-Universität Weimar, Germany *(2025–Present)*
-- B.Tech Computer Science & Engineering — VBIT, Hyderabad *(2019–2023)*
+## 🛠️ Built with
+HTML5 · CSS3 · JavaScript · hosted on GitHub Pages
 
 ## 📬 Contact
 - 📧 vasanthpuli413@gmail.com
